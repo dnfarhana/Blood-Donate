@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        function validate(){
+            var name = document.donorRegistration.donor_name.value;
+            var gen = document.donorRegistration.donor_gender.value;
+            var email= document.donorRegistration.donor_email.value;
+            var ic = document.donorRegistration.donor_ic.value;
+            var bt = document.donorRegistration.donor_bloodtype.value;
+            var no = document.donorRegistration.donor_number.value;
+            var adr = document.donorRegistration.donor_address.value;
+            var password = document.donorRegistration.donor_password.value;
+            var confirm = document.donorRegistration.confirm.value;
+                
+            if(name == null || name==""){
+                alert("Please enter your name!");
+                return false;
+            }else if(gen==null || gen==""){
+                alert("Please choose your gender!");
+                return false;
+            }else if(email==null || email==""){
+                alert("Please enter your email!")
+                return false;
+            }else if(ic==null || ic==""){
+                alert("Please enter your ic!")
+                return false;
+            }else if(bt==null || bt==""){
+                alert("Please choose your bloodtype!");
+                return false;
+            }else if(no==null || no==""){
+                alert("Please enter your phone number!");
+                return false;
+            }else if(adr==null || adr==""){
+                alert("Please enter your address!");
+                return false;
+            }else if(password==null || password==""){
+                alert("Please enter your password!");
+                return false;
+            }else if(confirm==null || confirm==""){
+                alert("Please enter confirmation password!");
+                return false;
+        }
+        
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h4>BloodPlus+</h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.jsp">Home</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="index.jsp">Login</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <h1><ins><b>Registration Form</b></ins></h1>
+        <br>
+        <form method="POST" action="/bloodDonate/register" name="donorRegistration" id="donorRegistration" onsubmit="return validate()">
+            <table>
+                <tr>
+                    <td><label for="donor_name">Name</label></td>
+                    <td>: <input type="text" name="donor_name" id="donor_name" placeholder="Enter your name">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="donor_gender">Gender</label></td>
+                    <td>: <input type="radio" id="male" name="donor_gender" value="male">Male
+                        <input type="radio" id="female" name="donor_gender" value="female">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="donor_email">Email</label></td>
+                    <td>: <input type="text" name="donor_email" id="donor_email" placeholder="Enter your email"></td>
+                </tr>
+                <tr>
+                    <td><label for="donor_ic">MyKad No</label></td>
+                    <td>: <input type="text" name="donor_ic" id="donor_ic" placeholder="Enter your IC"></td>
+                </tr>
+                <tr>
+                    <td><label for="donor_bloodtype">Blood Type</label></td>
+                    <td>: <input type="radio" id="A" name="donor_bloodtype" value="A">A
+                        <input type="radio" id="B" name="donor_bloodtype" value="B">B
+                        <input type="radio" id="AB" name="donor_bloodtype" value="AB">AB
+                        <input type="radio" id="O" name="donor_bloodtype" value="O">O
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="donor_number">Phone No</label></td>
+                    <td>: <input type="text" name="donor_number" id="donor_number" placeholder="Enter your phone number"></td>
+                </tr>
+                <tr>    
+                    <td><label for="donor_address">Address</label></td>
+                    <td>: <input type="text" name="donor_address" id="donor_address" placeholder="Enter your address"></td>
+                </tr>
+                <tr>
+                    <td><label for="donor_password">Password</label></td>
+                    <td>: <input type="password" name="donor_password" id="donor_password" placeholder="Enter your password"></td>
+                </tr>
+                <tr>
+                    <td><label for="confirm">Confirm Password</label></td>
+                    <td>: <input type="password" name="confirm" id="confirm" placeholder="Re-enter password"></td>
+                </tr>
+                <tr><td><br><input type="submit" value="Submit" class="w3-button w3-brown w3-round"></td></tr>
+            </table>
+        </form>
+    </div>
+    <footer>
+        ©2021 BLOODPLUS+ ASSOCIATION
+    </footer>
+</body>
+</html>
